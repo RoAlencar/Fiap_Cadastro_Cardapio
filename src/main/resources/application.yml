@@ -6,7 +6,7 @@ spring:
   # Datasource / Hikari
   # ==========================
   datasource:
-    url: jdbc:postgresql://localhost:5432/registra_cardapio_db
+    url: jdbc:postgresql://localhost:5435/registra_cardapio_db
     username: postgres
     password: FIAP_ADJT
     driver-class-name: org.postgresql.Driver

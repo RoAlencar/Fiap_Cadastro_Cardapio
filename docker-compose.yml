@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-cardapio
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: FIAP_ADJT
+      POSTGRES_DB: registra_cardapio_db
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres-cardapio-data:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+
+  app:
+    image: cardapio-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-cardapio
+    depends_on:
+      - postgres
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/registra_cardapio_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: FIAP_ADJT
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+    restart: unless-stopped
+
+volumes:
+  postgres-cardapio-data:
