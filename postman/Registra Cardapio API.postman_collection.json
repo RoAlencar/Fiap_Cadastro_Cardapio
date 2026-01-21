@@ -1,0 +1,404 @@
+{
+	"info": {
+		"_postman_id": "10ff4b15-769f-47c0-8b2f-4ab4aaa1cfb0",
+		"name": "Registra Cardapio API",
+		"description": "API para registro e gerenciamento de cardapio do sistema de gestão de restuarantes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10199583"
+	},
+	"item": [
+		{
+			"name": "app",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "cardapio",
+							"item": [
+								{
+									"name": "{name}",
+									"item": [
+										{
+											"name": "busca Item Do Cardapio Por Nome",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/app/v1/cardapio/:name",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"app",
+														"v1",
+														"cardapio",
+														":name"
+													],
+													"variable": [
+														{
+															"key": "name",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "*/*"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/app/v1/cardapio/:name",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"app",
+																"v1",
+																"cardapio",
+																":name"
+															],
+															"variable": [
+																{
+																	"key": "name"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "*/*"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"id\": 1060,\n    \"nome\": \"string\",\n    \"descricao\": \"string\",\n    \"preco\": 4565.562008277728,\n    \"disponivel\": false,\n    \"fotoProduto\": \"string\"\n  },\n  {\n    \"id\": 7670,\n    \"nome\": \"string\",\n    \"descricao\": \"string\",\n    \"preco\": 3339.5242254526547,\n    \"disponivel\": true,\n    \"fotoProduto\": \"string\"\n  }\n]"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "deleta Cardapio",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/app/v1/cardapio/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"app",
+														"v1",
+														"cardapio",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "3925"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/app/v1/cardapio/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"app",
+																"v1",
+																"cardapio",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "busca Todos Os Itens Do Cardapios",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/app/v1/cardapio",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"app",
+												"v1",
+												"cardapio"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/app/v1/cardapio",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"app",
+														"v1",
+														"cardapio"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"id\": 1060,\n    \"nome\": \"string\",\n    \"descricao\": \"string\",\n    \"preco\": 4565.562008277728,\n    \"disponivel\": false,\n    \"fotoProduto\": \"string\"\n  },\n  {\n    \"id\": 7670,\n    \"nome\": \"string\",\n    \"descricao\": \"string\",\n    \"preco\": 3339.5242254526547,\n    \"disponivel\": true,\n    \"fotoProduto\": \"string\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "atualiza Cardapio",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/app/v1/cardapio",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"app",
+												"v1",
+												"cardapio"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/app/v1/cardapio",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"app",
+														"v1",
+														"cardapio"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}"
+										}
+									]
+								},
+								{
+									"name": "criar Cardapio",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/app/v1/cardapio",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"app",
+												"v1",
+												"cardapio"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "*/*"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/app/v1/cardapio",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"app",
+														"v1",
+														"cardapio"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "*/*"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"id\": 4865,\n  \"nome\": \"string\",\n  \"descricao\": \"string\",\n  \"preco\": 3585.067878583492,\n  \"disponivel\": true,\n  \"fotoProduto\": \"string\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8082"
+		}
+	]
+}
